@@ -1,0 +1,24 @@
+.mainPage {
+    background-color: #282c34;
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100vw;
+    height: calc(100vh - 70px);
+
+    .left {
+        flex: 0.5;
+        
+    }
+    
+    .right {
+        flex: 0.5;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+}

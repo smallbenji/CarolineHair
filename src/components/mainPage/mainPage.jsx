@@ -1,7 +1,13 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import './mainPage.scss'
 
-export default function mainPage() {
+export default function MainPage() {
+    useEffect(() => {
+        fetch('http://localhost:8030/getAll')
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+        }, []);
+
   return (
     <div className='mainPage'>
         <div className='left'>

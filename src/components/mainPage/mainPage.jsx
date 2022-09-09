@@ -9,7 +9,7 @@ export default function MainPage() {
   var [varaible, setVariable] = useState();
   useEffect(() => {
     if(varaible != undefined) return;
-    fetch('http://carolinehair.herokuapp.com//getAll')
+    fetch('https://carolinehair.herokuapp.com//getAll')
       .then(response => response.json())
       .then(json => setVariable(json))
       .then(json => console.log(json));

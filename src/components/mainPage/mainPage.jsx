@@ -17,9 +17,9 @@ export default function MainPage() {
   return (
     <div className='mainPage'>
         <div className='left'>
-        {varaible.map((item, index) => (
+        {varaible ? varaible.map((item, index) => (
               <h1>{item.title}</h1>
-            ))}
+            )) : <h1>Loading...</h1>}
         </div>
         <div className='right'>
         <Button variant='contained'><h1>Hello there!</h1></Button>

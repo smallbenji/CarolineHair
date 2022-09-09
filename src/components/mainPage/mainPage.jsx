@@ -1,13 +1,16 @@
-import {React, useEffect} from 'react'
+import {Component, React, useEffect} from 'react'
 import './mainPage.scss'
+import axios from 'axios'
 
 export default function MainPage() {
-    useEffect(() => {
-        fetch('http://localhost:8030/getAll')
-        .then((response) => response.json())
-        .then((data) => console.log(data));
-        }, []);
 
+  useEffect(() => {
+    
+    axios.get('http://carolinehair.herokuapp.com/getAll')
+    .then(res => console.log(res.data));
+
+  });
+  
   return (
     <div className='mainPage'>
         <div className='left'>

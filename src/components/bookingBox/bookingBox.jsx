@@ -16,6 +16,11 @@ export default function BookingBox({item}){
         handleOpen();
     }
 
+    const bookConfirmed = (id) => {
+        setOpen(false);
+        alert(id);
+    }
+
     const handleClose = () => {
         setOpen(false);
     }
@@ -45,7 +50,7 @@ export default function BookingBox({item}){
                 <DialogTitle>Booking</DialogTitle>
                 <DialogContent className="title">
                     <DialogContentText>
-                        Well hello there
+                        Booking af: {item.title}
                     </DialogContentText>
                 <TextField 
                 autofocus
@@ -54,12 +59,22 @@ export default function BookingBox({item}){
                 label="Navn"
                 type="text"
                 fullWidth
+                required
+                variant="standard"
+                />
+                <TextField 
+                autofocus
+                margin="dense"
+                id="name"
+                label="Evt. kommentar"
+                type="text"
+                fullWidth 
                 variant="standard"
                 />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Afbryd</Button>
-                    <Button onClick={handleClose}>Book</Button>
+                    <Button onClick={() => {bookConfirmed(item._id)}}>Book</Button>
                 </DialogActions>
             </Dialog>
         </div>

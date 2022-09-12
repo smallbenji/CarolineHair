@@ -37,3 +37,9 @@
 .MuiDialogContentText-root	{
     color: red;
 }
+
+@media (max-width: 500px) {
+    .bookingBox {
+        width: 100% !important;
+    }
+}

@@ -55,7 +55,7 @@ export default function BookingBox({item}){
                 <TextField 
                 autofocus
                 margin="dense"
-                id="name"
+                id="nameInput"
                 label="Navn"
                 type="text"
                 fullWidth
@@ -65,7 +65,7 @@ export default function BookingBox({item}){
                 <TextField 
                 autofocus
                 margin="dense"
-                id="name"
+                id="comment"
                 label="Evt. kommentar"
                 type="text"
                 fullWidth 

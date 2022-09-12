@@ -12,13 +12,18 @@ export default function BookingBox({item}){
 
     const dateText = `${date.getDate()}/${date.getMonth()+1}/${date.getYear()+1900}`
 
+    const [name, setName] = useState('');
+    const [comment, setComment] = useState('');
+    
     const book = (_id) => {
         handleOpen();
     }
 
     const bookConfirmed = (id) => {
-        setOpen(false);
-        alert(id);
+        handleClose();
+        setComment("Ingen kommentar!");
+        console.log(name, comment, id);
+        fetch('https://carolinehair.herokuapp.com');
     }
 
     const handleClose = () => {
@@ -26,6 +31,8 @@ export default function BookingBox({item}){
     }
 
     const handleOpen = () => {
+        setName('');
+        setComment('');
         setOpen(true);
     }
 
@@ -52,22 +59,34 @@ export default function BookingBox({item}){
                     <DialogContentText>
                         Booking af: {item.title}
                     </DialogContentText>
-                <TextField 
+                <TextField
+                onChange={(e) => setName(e.target.value)} 
                 autofocus
                 margin="dense"
                 id="nameInput"
                 label="Navn"
                 type="text"
+                InputLabelProps={{
+                    className: "NameField1"
+                }}
+                PaperProps={{
+                    color: "white"
+                }}
                 fullWidth
                 required
                 variant="standard"
                 />
                 <TextField 
+                onChange={(e) => setComment(e.target.value)} 
                 autofocus
                 margin="dense"
                 id="comment"
                 label="Evt. kommentar"
+                rows={2}
                 type="text"
+                InputLabelProps={{
+                    className: "NameField1"
+                }}
                 fullWidth 
                 variant="standard"
                 />

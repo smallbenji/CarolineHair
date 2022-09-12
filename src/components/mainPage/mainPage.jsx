@@ -22,8 +22,10 @@ export default function MainPage() {
                 )) : <h1>Loading...</h1>}
         </div>
         <div className='right'>
-        <Button variant='contained'><h1>Hello there!</h1></Button>
-        {varaible ? <h1>{varaible[0].title}</h1> : <h1>Loading...</h1>}        </div>
+        <h1>Om side:</h1>
+        <p>Kommer snart...</p>
+        <p>Dog skal man meget gerne kunne bestille tider</p><h1>⬅</h1>
+        </div>
     </div>
   )
 }

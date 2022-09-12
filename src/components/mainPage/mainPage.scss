@@ -15,10 +15,15 @@
         margin-left: 25px;
         margin-right: 25px;
 
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 70%;
         .mainPage {
             text-align: left;
         }
+        
     }
+
     
     .right {
         flex: 0.5;
@@ -39,4 +44,15 @@
         width: 100%;
         flex: 1 !important;
     }
+}
+
+.left::-webkit-scrollbar{
+    width: 7;
+}
+.left::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+}
+.left::-webkit-scrollbar-thumb{
+    background-color: "darkgrey";
+    outline: 1px solid slategrey;
 }

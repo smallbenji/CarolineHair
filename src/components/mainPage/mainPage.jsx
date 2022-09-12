@@ -1,7 +1,7 @@
 import { React, useEffect, useState} from 'react'
 import {Button} from '@mui/material'
 import './mainPage.scss'
-import BookingList from '../bookingList/bookingList';
+import BookingBox from '../bookingBox/bookingBox';
 
 export default function MainPage() {
 
@@ -10,20 +10,18 @@ export default function MainPage() {
     if(varaible !== undefined) return;
     fetch('https://carolinehair.herokuapp.com/getAll')
       .then(response => response.json())
-      .then(json => setVariable(json))
-      .then(json => console.log(json));
-  });
+      .then(json => setVariable(json));
+      });
   
   return (
     <div className='mainPage'>
         <div className='left'>
         {varaible ? varaible.map((item, index) => (
-              <h1>{item.title}</h1>
+                <BookingBox item={item} />
             )) : <h1>Loading...</h1>}
         </div>
         <div className='right'>
         <Button variant='contained'><h1>Hello there!</h1></Button>
-        <BookingList />
         {varaible ? <h1>{varaible[0].title}</h1> : <h1>Loading...</h1>}        </div>
     </div>
   )

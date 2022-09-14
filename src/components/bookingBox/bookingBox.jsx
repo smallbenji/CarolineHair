@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 
-import { Button, collapseClasses, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import './bookingBox.scss';
 import { color, style } from '@mui/system';
 
@@ -23,7 +23,7 @@ export default function BookingBox({item}){
         handleClose();
         setComment("Ingen kommentar!");
         console.log(name, comment, id);
-        fetch('https://carolinehair.herokuapp.com');
+        fetch('https://carolinehair.herokuapp.com/test');
     }
 
     const handleClose = () => {

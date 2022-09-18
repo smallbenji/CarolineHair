@@ -10,10 +10,10 @@ export default function BookingBox({item}){
 
     const date = new Date(item.dateAndTime);
 
-    const dateText = `${date.getDate()}/${date.getMonth()+1}/${date.getYear()+1900}`
+    const dateText = `${date.getHours()}:${date.getMinutes()} ${date.getDate()}/${date.getMonth()+1}/${date.getYear()+1900}`
 
     const [name, setName] = useState('');
-    const [comment, setComment] = useState('');
+    const [comment, setComment] = useState('Ingen kommentar!');
     
     const book = (_id) => {
         handleOpen();

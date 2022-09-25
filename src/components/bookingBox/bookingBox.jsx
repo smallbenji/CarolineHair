@@ -21,9 +21,19 @@ export default function BookingBox({item}){
 
     const bookConfirmed = (id) => {
         handleClose();
-        setComment("Ingen kommentar!");
         console.log(name, comment, id);
-        fetch('https://carolinehair.herokuapp.com/test');
+        var fetchURL;
+        //if(Object.keys(name).length === 0) {
+        //     
+        //}
+        if(Object.keys(comment).length === 0) {
+            setComment("Ingen kommentar!");
+            fetchURL = `https://carolinehair.herokuapp.com/book/${id}/${name}/ingen kommentar`; 
+        } else {
+            fetchURL = `https://carolinehair.herokuapp.com/book/${id}/${name}/${comment}`
+        }
+        console.log(fetchURL.replace(/ /g, '%20'));
+        fetch(fetchURL.replace(/ /g, '%20'));
     }
 
     const handleClose = () => {

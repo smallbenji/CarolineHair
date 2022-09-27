@@ -17,7 +17,15 @@ export default function BookingBox({ item }) {
 
     const date = new Date(item.dateAndTime)
 
-    const dateText = `${date.getHours()}:${date.getMinutes()} ${date.getDate()}/${
+    const getMinutes = (minutes) => {
+      if(minutes.length == 2){
+        return minutes;
+      } else {
+        return "0"+minutes
+      }
+    }
+
+    const dateText = `${date.getHours()}:${getMinutes(date.getMinutes())} ${date.getDate()}/${
         date.getMonth() + 1
     }/${date.getYear() + 1900}`
 
